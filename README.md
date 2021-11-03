@@ -15,13 +15,13 @@ This should work on Python3 across platforms, without any extra pip modules to b
 
 ## How to run 
 ```
-Server uses static port number 5050 and clients use dynamic ports. So please make sure 5050 is unused before starting the server code.
+[NOTE] Server uses static port number 5050 and clients use dynamic ports. So please make sure 5050 is unused before starting the server code.
 ```
 ```
-Make sure you use the python pointing to the correct python version. 
+[NOTE] Make sure you use the python pointing to the correct python version. 
 ```
 ```
-The client code is written with a blocking input infinite loop. So an input would be required to proceed / update messages.
+[NOTE] The client code is written with a blocking input infinite loop. So an input would be required to proceed / update messages.
 ```
 ### Steps : 
 1. Run the server.py first and keep the terminal open.
