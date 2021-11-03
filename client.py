@@ -23,7 +23,7 @@ EXEC_MESSAGE = 4
 IP = socket.gethostbyname(socket.gethostname())
 PORT = 5050
 HEADER_LENGTH = 10
-CS_EXECUTION_TIME = 30
+CS_EXECUTION_TIME = 15
 selfProcessID = str(uuid.uuid1())
 selfCreatedts = f"{int(round((datetime.now()).timestamp()))}"
 repdi = []
@@ -45,7 +45,7 @@ client_socket.send(intro_header + pickle.dumps(intro))
 def logicalClock():
     now = datetime.now()
     seconds_since_midnight = (now - now.replace(hour=0, minute=0, second=0, microsecond=0)).total_seconds()
-    logicalClock = int(seconds_since_midnight/15)
+    logicalClock = int(seconds_since_midnight)
     return logicalClock
 
 def executeCS():
@@ -117,9 +117,9 @@ while True:
                     repdi.append(servmsg)
                     print(f"Appending to RDi as this process({selfProcessID}) is executing CS")
                 else:
-                    if requestedCS and (selfCreatedts > servmsg['createdts'] or servmsg['timestamp'] < requestedCStime):
+                    if requestedCS and (selfCreatedts < servmsg['createdts'] or servmsg['timestamp'] > requestedCStime):
                         repdi.append(servmsg)
-                        print(f"Appending to RDi as this process({selfProcessID}) has more priority")
+                        print(f"Appending to RDi {servmsg['sentFrom']} as this process({selfProcessID}) has more priority")
                     else:
                         print(f"Sending reply to {servmsg['sentFrom']} for its Request sent at {servmsg['timestamp']}")
                         rep_msq= {'messageType': REPLY_MESSAGE, 'sentTo': servmsg['sentFrom']}
@@ -133,7 +133,6 @@ while True:
             if int(servmsg['messageType']) == REPLY_MESSAGE:
                 print(f"Replies recieved at {selfProcessID}")
                 reqdi.append(servmsg)
-                print (reqdi_count, len(reqdi), reqdi)
                 if reqdi_count == len(reqdi):
                     print("Replies recieved from : "+str(reqdi_count)+" process(es)")
                     reqdi_count -= len(reqdi)
