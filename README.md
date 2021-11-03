@@ -43,13 +43,21 @@ python client.py
 ### Output :
 All the output are self explanatory. Below are the images attached. 
 
-![First Connection](https://github.com/abhi-panda/Ricart-Agrawala-python-socket/images/1.png "First Connection")
+First Connection :
 
-![One process requesting cs getting reply and executing](https://github.com/abhi-panda/Ricart-Agrawala-python-socket/images/4.png "One process requesting cs getting reply and executing")
+![First Connection](https://github.com/abhi-panda/Ricart-Agrawala-python-socket/raw/main/images/1.png "First Connection")
 
-![Multiple processes requesting so prioritizing and use of rdi](https://github.com/abhi-panda/Ricart-Agrawala-python-socket/images/2.png "Multiple processes requesting so prioritizing and use of rdi")
+One process requesting cs getting reply and executing : 
 
-![Multiple processes requesting so prioritizing using of rdi and executing](https://github.com/abhi-panda/Ricart-Agrawala-python-socket/images/3.png "Multiple processes requesting so prioritizing using of rdi and executing")
+![One process requesting cs getting reply and executing](https://github.com/abhi-panda/Ricart-Agrawala-python-socket/raw/main/images/4.png "One process requesting cs getting reply and executing")
+
+Multiple processes requesting so prioritizing and use of rdi :
+
+![Multiple processes requesting so prioritizing and use of rdi](https://github.com/abhi-panda/Ricart-Agrawala-python-socket/raw/main/images/2.png "Multiple processes requesting so prioritizing and use of rdi")
+
+Multiple processes requesting so prioritizing using of rdi and executing :
+
+![Multiple processes requesting so prioritizing using of rdi and executing](https://github.com/abhi-panda/Ricart-Agrawala-python-socket/raw/main/images/3.png "Multiple processes requesting so prioritizing using of rdi and executing")
 
 
 # Algorithm 
